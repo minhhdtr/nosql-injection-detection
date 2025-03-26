@@ -1,1 +1,9 @@
+# node_modules
+**/node_modules/
+
+# Parcel cache & build
+.parcel-cache/
+frontend/dist/
+
+# OS files
 .DS_Store
