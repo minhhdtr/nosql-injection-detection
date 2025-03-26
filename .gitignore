@@ -1,9 +1,19 @@
 # node_modules
 **/node_modules/
+/demo-app/node_modules
 
-# Parcel cache & build
-.parcel-cache/
-frontend/dist/
+# parcel cache & build
+/demo-app/.parcel-cache
+/demo-app/backend/.env
+/demo-app/frontend/dist
+
+# python
+**/__pycache__/
+**/.ipynb_checkpoints/
+**/venv/
+.venv/
+**/.env
+**/*.pyc
 
 # OS files
 .DS_Store
