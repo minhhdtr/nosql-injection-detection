@@ -1,0 +1,50 @@
+db.products.find({ category: "electronics", price: { $lt: 500 } })::::0
+db.admins.find({ role: "admin", $or: [ {}, { access: "full" } ] })::::1
+db.sessions.find({ $where: "this.active == true; sleep(10000)" })::::1
+db.books.find({ author: "Jane Austen", published_year: 1813 })::::0
+db.collection.find({ $where: "this.name == ''; return true" })::::1
+db.users.find({ username: "bob", $or: [ {}, { role: "user" } ] })::::1
+db.logs.find({ level: "info", $where: "this.message.length > 0; var foo='bar'" })::::1
+db.customers.insert({ name: "Emma Watson", age: 30, city: "London" })::::0
+db.users.find({ username: "admin", password: { $exists: true } })::::1
+db.orders.aggregate([{ $match: { status: "pending" } }, { $group: { _id: "$customer_id", total: { $sum: "$amount" } } }])::::0
+db.inventory.find({ "size": { $in: ["M", "L"] } })::::0
+db.students.deleteOne({ name: "Alex" })::::0
+db.collection.find({ $where: "this.field > 0; sleep(5000)" })::::1
+db.collection.find({ $where: "function() { return true }" })::::1
+db.collection.find({ age: { $gte: 18, $lt: 65 } })::::0
+db.orders.find({ status: "completed", date: { $gt: new Date('2023-01-01') } })::::0
+db.articles.find({ tags: { $in: ["tech", "news"] } })::::0
+db.users.find({ username: { $gt: "" }, password: { $gt: "" } })::::1
+db.orders.aggregate([{ $match: { status: "A" } }, { $group: { _id: "$cust_id", total: { $sum: "$amount" } } }])::::0
+db.students.find({ grade: "A", age: { $gte: 18 } })::::0
+db.products.insert({ name: "Smartphone", price: 699, stock: 100 })::::0
+db.logs.find({ $where: "this.status == 'failed'; sleep(5000)" })::::1
+db.admins.find({ role: "superuser", $or: [ { access: "full" }, {} ] })::::1
+db.employees.find({ department: "Sales", years_of_service: { $gt: 5 } })::::0
+db.sessions.find({ $where: "this.isActive == true; while(true);" })::::1
+db.books.find({ genre: "Sci-Fi", rating: { $gte: 4.5 } })::::0
+db.customers.insert({ name: "John Doe", email: "john@example.com", age: 28 })::::0
+db.logs.find({ level: "error", $where: "this.message.length > 0; var x = 1" })::::1
+db.products.find({ price: { $lte: 50 } }, { name: 1, price: 1, _id: 0 })::::0
+db.collection.find({ $where: "this.name == 'admin'; return(db.getCollectionNames().length > 0)" })::::1
+db.posts.find({}, {title: 1, date: 1}).sort({date: -1}).limit(5)::::0
+db.customers.find({ age: { $gte: 18, $lt: 65 }, city: "New York" })::::0
+db.users.find({ username: "admin", password: { $ne: null } })::::1
+db.orders.aggregate([{ $match: { status: "A" } }, { $group: { _id: "$cust_id", total: { $sum: "$amount" } } }])::::0
+db.students.find({ grade: "A", age: { $gte: 18 } })::::0
+db.products.insert({ name: "Smartphone", price: 699, stock: 100 })::::0
+db.logs.find({ $where: "this.status == 'failed'; sleep(5000)" })::::1
+db.admins.find({ role: "superuser", $or: [ { access: "full" }, {} ] })::::1
+db.employees.find({ department: "Sales", years_of_service: { $gt: 5 } })::::0
+db.sessions.find({ $where: "this.isActive == true; while(true);" })::::1
+db.books.find({ genre: "Sci-Fi", rating: { $gte: 4.5 } })::::0
+db.articles.find({ category: "news", published: true })::::0
+db.admins.find({ $where: "this.access == 'full'; return true" })::::1
+db.products.find({ category: "books", price: { $lt: 20 } })::::0
+db.sessions.find({ active: true }); db.dropDatabase()//end::::1
+db.orders.insert({ order_id: 101, customer_id: 456, amount: 300 })::::0
+db.customers.find({ age: { $gte: 18, $lt: 65 }, city: "New York" })::::0
+db.orders.aggregate([{ $match: { status: "A" } }, { $group: { _id: "$cust_id", total: { $sum: "$amount" } } }])::::0
+db.users.find({ role: "user", $or: [ {}, { status: "active" } ] })::::1
+db.articles.find({ category: "news", published: true })::::0

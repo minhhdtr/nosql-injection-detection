@@ -1,0 +1,59 @@
+Model: Decision Tree
+criterion: gini
+max_depth: 10
+min_samples_leaf: 1
+min_samples_split: 2
+
+
+Model: Random Forest
+class_weight: balanced
+max_depth: 5
+min_samples_leaf: 1
+min_samples_split: 2
+n_estimators: 100
+
+
+Model: SVM
+C: 0.1
+class_weight: balanced
+gamma: scale
+kernel: rbf
+
+
+Model: Neural Network
+activation: tanh
+hidden_layer_sizes: (64, 32)
+learning_rate_init: 0.05
+max_iter: 1000
+solver: adam
+
+
+Model: XGBoost
+colsample_bytree: 0.7
+learning_rate: 0.01
+max_depth: 3
+n_estimators: 100
+scale_pos_weight: 3
+subsample: 0.7
+
+
+Model: AdaBoost
+algorithm: SAMME
+learning_rate: 1.0
+n_estimators: 200
+
+
+Model: Logistic Regression
+C: 1
+class_weight: balanced
+solver: liblinear
+
+
+Model: Naive Bayes
+Default setting
+
+
+Model: k-NN
+algorithm: auto
+n_neighbors: 7
+weights: distance
