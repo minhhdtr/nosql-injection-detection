@@ -439,6 +439,7 @@ db.currentOp({"active" : true,"secs_running" : { "$gt" : 3 },"ns" : /^db1\./})::
 db.currentOp({$or: [{ op: "command", "query.createIndexes": { $exists: true } },{ op: "none", ns: /\.system\.indexes\b/ }]})::::0
 db.users.find({"username": "admin"});db.users.save({username:"newUser", password:"12345678"})//", "password": "abcd"})::::1
 db.users.find({"username": "admin"});db.users.renameCollection("record")//", "password": "abcd"})::::1
+db.users.find({"username":"admin"});db.users.renameCollection("hacked")//", "password": "abcd"})::::1
 db.users.find({"username": "admin"});db.users.bulkWrite( [{ insertOne : { "document" :{"username":"newUser", "password":"12345678"} } }])//", "password": "abcd"})::::1
 db.users.find({"username": "admin"});db.users.bulkWrite( [{ updateOne : { "filter" :{"username":"admin"} , "update" : {"username":"newUser", "password":"12345678"}} }])//", "password": "abcd"})::::1
 db.users.find({"username": "admin"});db.users.bulkWrite( [{ updateMany: { "filter" :{"username":"admin"} , "update" : {"username":"newUser", "password":"12345678"}} }])//", "password": "abcd"})::::1

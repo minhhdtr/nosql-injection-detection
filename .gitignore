@@ -15,5 +15,6 @@
 **/.env
 **/*.pyc
 
-# OS files
+# OS files and vscode
 .DS_Store
+.vscode/
