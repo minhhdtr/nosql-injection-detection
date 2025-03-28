@@ -1,0 +1,17 @@
+# python
+__pycache__/
+*.pyc
+
+# environment folders
+.venv/
+
+# OS files and vscode
+.DS_Store
+.vscode/
+
+# Log files
+*.log
+
+# git
+.git
+.gitignore
