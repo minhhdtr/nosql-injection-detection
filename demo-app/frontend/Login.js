@@ -29,13 +29,17 @@ function Login() {
         placeholder="Username"
         onChange={handleChange}
       /><br /><br />
+
       <input
         name="password"
         placeholder="Password"
         type="password"
         onChange={handleChange}
       /><br /><br />
+      
       <button type="submit">Login</button>
+      <br /><br />
+      
       <p>{message}</p>
     </form>
   );

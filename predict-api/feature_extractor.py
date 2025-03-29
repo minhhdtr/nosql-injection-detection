@@ -1,4 +1,5 @@
 import string
+import re
 
 class FeatureExtractor:
     def __init__(self, payload_list):
@@ -19,9 +20,15 @@ class FeatureExtractor:
         def contains_comparison(query):
           condition = [
             "find(", "$selector", "find.sort(", "$eq", "$gt", "$gte",
-            "$ne", "$lt", "$lte", "$in", "$nin"
-          ]
-          return int(any(c in query for c in condition))
+            "$ne", "$lt", "$lte", "$nin"
+          ]    
+          first_check = any(c in query for c in condition)
+          
+          # this is for $in operator because basic check will include $inc as well
+          pattern = r'\$in\b\s*:'
+          second_check = bool(re.search(pattern, query))
+          
+          return int(first_check or second_check)
 
         # Featute 4: Contains Logical Operator
         def contains_logical_operator(query):

@@ -10,7 +10,7 @@ function App() {
       <h1>{page === "login" ? "Login" : "Register"}</h1>
       {page === "login" ? <Login /> : <Register />}
       <button onClick={() => setPage(page === "login" ? "register" : "login")}>
-        {page === "login" ? "👉 Go to Register" : "👈 Back to Login"}
+        {page === "login" ? "👉 Go to register" : "👈 Back to login"}
       </button>
     </div>
   );

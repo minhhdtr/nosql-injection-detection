@@ -29,13 +29,17 @@ function Register() {
         placeholder="Username"
         onChange={handleChange}
       /><br /><br />
+
       <input
         name="password"
         placeholder="Password"
         type="password"
         onChange={handleChange}
       /><br /><br />
+
       <button type="submit">Register</button>
+      <br /><br />
+      
       <p>{message}</p>
     </form>
   );

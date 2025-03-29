@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 import logging
 from datetime import datetime
+import re
 
 from feature_extractor import FeatureExtractor
 
@@ -60,4 +61,4 @@ def predict():
     return jsonify({'prediction': label})
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5000, host='0.0.0.0', debug=True)
