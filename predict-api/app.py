@@ -27,7 +27,7 @@ with open('payload.txt', 'r') as f:
     payload_list = [line.strip() for line in f.readlines()]
 
 extractor = FeatureExtractor(payload_list)
-loaded = joblib.load('best_model.pkl')
+loaded = joblib.load('random_forest.pkl')
 model = loaded['model']
 
 logging.basicConfig(
